@@ -12,3 +12,5 @@ const celebSchema = new Schema({
 const Celeb = mongoose.model('Celeb', celebSchema);
 
 module.exports = Celeb;
+
+// test 
