@@ -65,7 +65,8 @@ app.use((req,res,next)=>{
   
   res.locals.theUser = req.session.currentuser;
 
-  // res.locals.errorMessage = req.flash('error');
+  res.locals.successMessage = req.flash('success');
+  res.locals.errorMessage = req.flash('error');
 
   next();
 
@@ -86,5 +87,8 @@ app.use('/movies', movieRoutes);
 
 const userRoutes = require('./routes/user-routes');
 app.use('/user', userRoutes);
+
+const adminRoutes = require('./routes/admin-routes');
+app.use('/admin', adminRoutes);
 
 module.exports = app;
